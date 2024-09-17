@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 export type Person = {
   id: string; // UUID-string
   name: string;
-  gender?: "male" | "female";
+  gender: "male" | "female";
   picture?: string; // URL to picture
   information?: string; // Additional information
   birthDate?: Date; // Date of birth
@@ -17,6 +17,7 @@ export type Person = {
 export const defaultPerson: Person = {
   id: "",
   name: "",
+  gender: "male",
 };
 
 type FamilyTreeContextType = {

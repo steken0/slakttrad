@@ -1,11 +1,15 @@
 import React from "react";
-import { Container } from "@mui/material";
-import EmptyTree from "./EmptyTree.tsx/EmptyTree";
+import { Typography, Container } from "@mui/material";
+import { useFamilyTree } from "../../Contexts/FamilyTreeContext";
+import FamilyTree from "./FamilyTree/FamilyTree";
+
+import EmptyTree from "./EmptyTree/EmptyTree";
 
 const StartPage = () => {
+  const { nodes } = useFamilyTree();
   return (
     <Container sx={{ alignItems: "center" }}>
-      <EmptyTree />
+      {nodes.size > 0 ? <FamilyTree /> : <EmptyTree />}
     </Container>
   );
 };
